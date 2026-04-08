@@ -1,0 +1,57 @@
+<html>
+<head>
+<title> form pendaftaran sekolah </title>
+<link rel="stylesheet" href="sumative2.css">
+</head>
+<body>
+<div class="keranjang">
+	<h1> form pendaftaran </h1>
+	
+	<label> Nama : </label>
+	<input type="text" id="nama" placeholder="Masukkan nama">
+	<div class="keranjang2">
+	<label> Jenis kelamin : </label>
+	<label>
+		<input type="radio" name="gender" value="laki-laki"> laki-laki
+	</label>
+	<label>
+		<input type="radio" name="gender" value="perempuan"> perempuan
+	</label>
+	<label> Umur : </label>
+<label>
+  <input type="checkbox" name="umur" value="10-12 tahun"> 10-12 tahun
+</label>
+<label>
+  <input type="checkbox" name="umur" value="13-15 tahun"> 13-15 tahun
+</label>
+<label>
+  <input type="checkbox" name="umur" value="16-17 tahun"> 16-17 tahun
+</label>
+
+<br>
+
+<label> Tingkatan : </label>
+<label>
+  <input type="radio" name="tingkatan" value="SD"> SD
+</label>
+<label>
+  <input type="radio" name="tingkatan" value="SMP"> SMP
+</label>
+<label>
+  <input type="radio" name="tingkatan" value="SMA"> SMA
+</label>
+	<label> Persetujuan :</label>
+	<input type="checkbox" id="setuju"> saya setuju
+	<button id="tampilkanBtn"> click </button>
+	<div class="keranjang3" id="show">
+	tampilan data
+	</div>
+	</div>
+</div>	
+<div style="text-align:center; margin-top:20px;">
+	<button id="okBtn">OK</button>
+	<button id="clearBtn">Clear</button>
+</div>
+<script src="sumative.js"></script>
+</body>
+</html>
