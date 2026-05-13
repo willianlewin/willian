@@ -1,7 +1,7 @@
 document.getElementById("produk").style.display = "none";
 document.getElementById("syaratBox").style.display = "none";
 
-// ================= FORM =================
+
 document.getElementById('tampilkanBtn').onclick = function () {
 
 	var nama = document.getElementById('nama').value.trim();
@@ -41,23 +41,23 @@ document.getElementById('tampilkanBtn').onclick = function () {
 		"\nPersetujuan: " + setuju;
 };
 
-// tombol OK
+
 document.getElementById('okBtn').onclick = function () {
 	document.getElementById('tampilkanBtn').click();
 };
 
-// tombol CLEAR
+
 document.getElementById('clearBtn').onclick = function () {
 	location.reload();
 };
 
-// ================= HERO =================
+
 function ubahHero(judul, deskripsi) {
 	document.getElementById("judulHero").innerText = judul;
 	document.getElementById("deskripsiHero").innerText = deskripsi;
 }
 
-// ================= PRODUK =================
+
 function showProduk(level) {
 
 	document.getElementById("formPendaftaran").style.display = "none";
@@ -71,7 +71,7 @@ function showProduk(level) {
 
 	document.getElementById(level).style.display = "block";
 
-	// 🔥 UBAH HERO
+
 	if (level === "sd") {
 		ubahHero("Biaya Pendaftaran SD", "Informasi biaya masuk Sekolah Dasar");
 	} else if (level === "smp") {
@@ -81,7 +81,7 @@ function showProduk(level) {
 	}
 }
 
-// ================= SYARAT =================
+
 function showSyarat(level) {
 
 	document.getElementById("formPendaftaran").style.display = "none";
