@@ -10,7 +10,7 @@ body {
 	color: white;
 }
 
-/* NAVBAR */
+
 .navbar {
 	display: flex;
 	justify-content: center;
@@ -60,13 +60,13 @@ body {
 	display: block;
 }
 
-/* HERO */
+
 .hero {
 	text-align: center;
 	padding: 30px;
 }
 
-/* PRODUK */
+
 .produk {
 	display: none;
 	justify-content: center;
@@ -110,7 +110,7 @@ input[type="password"] {
 	border: none;
 }
 
-/* BUTTON */
+
 button {
 	cursor: pointer;
 }
@@ -141,4 +141,5 @@ button {
 	border-radius: 10px;
 	background: orange;
 	color: white;
+}
 }
