@@ -1,119 +1,71 @@
-document.getElementById("produk").style.display = "none";
-document.getElementById("syaratBox").style.display = "none";
-
-
-document.getElementById('tampilkanBtn').onclick = function () {
-
-	var nama = document.getElementById('nama').value.trim();
-	if (nama == "") nama = "(Mohon di isi)";
-
-	var gender = "";
-	var radios = document.getElementsByName('gender');
-	for (var i = 0; i < radios.length; i++) {
-		if (radios[i].checked) {
-			gender = radios[i].value;
-		}
-	}
-
-	var umurCheck = document.getElementsByName('umur');
-	var umurList = [];
-	for (var i = 0; i < umurCheck.length; i++) {
-		if (umurCheck[i].checked) {
-			umurList.push(umurCheck[i].value);
-		}
-	}
-
-	var tingkatRadio = document.getElementsByName('tingkatan');
-	var tingkatan = "";
-	for (var i = 0; i < tingkatRadio.length; i++) {
-		if (tingkatRadio[i].checked) {
-			tingkatan = tingkatRadio[i].value;
-		}
-	}
-
-	var setuju = document.getElementById('setuju').checked ? "ya" : "tidak";
-
-	document.getElementById('show').innerText =
-		"Nama: " + nama +
-		"\nGender: " + (gender || "mohon di isi") +
-		"\nUmur: " + (umurList.join(", ") || "mohon di isi") +
-		"\nTingkatan: " + (tingkatan || "mohon di isi") +
-		"\nPersetujuan: " + setuju;
-};
-
-
-document.getElementById('okBtn').onclick = function () {
-	document.getElementById('tampilkanBtn').click();
-};
-
-
-document.getElementById('clearBtn').onclick = function () {
-	location.reload();
-};
-
+document.getElementById("formRegister").style.display = "none";
 
 function ubahHero(judul, deskripsi) {
 	document.getElementById("judulHero").innerText = judul;
 	document.getElementById("deskripsiHero").innerText = deskripsi;
 }
 
+function showProduk(menu) {
 
-function showProduk(level) {
-
-	document.getElementById("formPendaftaran").style.display = "none";
-	document.getElementById("syaratBox").style.display = "none";
 	document.getElementById("produk").style.display = "flex";
+	document.getElementById("formRegister").style.display = "none";
 
 	var cards = document.querySelectorAll(".produk .card");
+
 	for (var i = 0; i < cards.length; i++) {
 		cards[i].style.display = "none";
 	}
 
-	document.getElementById(level).style.display = "block";
-
-
-	if (level === "sd") {
-		ubahHero("Biaya Pendaftaran SD", "Informasi biaya masuk Sekolah Dasar");
-	} else if (level === "smp") {
-		ubahHero("Biaya Pendaftaran SMP", "Informasi biaya masuk Sekolah Menengah Pertama");
-	} else if (level === "sma") {
-		ubahHero("Biaya Pendaftaran SMA", "Informasi biaya masuk Sekolah Menengah Atas");
-	}
-}
-
-
-function showSyarat(level) {
-
-	document.getElementById("formPendaftaran").style.display = "none";
-	document.getElementById("produk").style.display = "none";
-	document.getElementById("syaratBox").style.display = "flex";
-
-	var cards = document.querySelectorAll("#syaratBox .card");
-	for (var i = 0; i < cards.length; i++) {
-		cards[i].style.display = "none";
-	}
-
-	document.getElementById("syarat-" + level).style.display = "block";
-
-	
-	if (level === "sd") {
-		ubahHero("Syarat Masuk SD", "Persyaratan masuk Sekolah Dasar");
-	} else if (level === "smp") {
-		ubahHero("Syarat Masuk SMP", "Persyaratan masuk Sekolah Menengah Pertama");
-	} else if (level === "sma") {
-		ubahHero("Syarat Masuk SMA", "Persyaratan masuk Sekolah Menengah Atas");
-	}
-}
-
-
-function kembaliForm() {
-	document.getElementById("formPendaftaran").style.display = "block";
-	document.getElementById("produk").style.display = "none";
-	document.getElementById("syaratBox").style.display = "none";
-
+	document.getElementById(menu).style.display = "block";
 
 	ubahHero(
-		"Selamat Datang di Website Pendaftaran",
-		"Sekolah terbaik untuk masa depan yang cerah"
+		"Menu " + menu,
+		"Makanan dan minuman favorit tersedia di sini"
 	);
 }
+
+function showForm() {
+
+	document.getElementById("produk").style.display = "none";
+	document.getElementById("formRegister").style.display = "block";
+
+	ubahHero(
+		"Register Akun",
+		"Daftarkan akun untuk mulai berbelanja"
+	);
+}
+
+function kembaliHome() {
+
+	document.getElementById("produk").style.display = "none";
+	document.getElementById("formRegister").style.display = "none";
+
+	ubahHero(
+		"Selamat Datang di E-Commerce Makanan",
+		"Pesan makanan dan minuman favoritmu dengan mudah"
+	);
+}
+
+document.getElementById("tampilkanBtn").onclick = function () {
+
+	var nama = document.getElementById("nama").value;
+	var email = document.getElementById("email").value;
+
+	var gender = "";
+	var radios = document.getElementsByName("gender");
+
+	for (var i = 0; i < radios.length; i++) {
+		if (radios[i].checked) {
+			gender = radios[i].value;
+		}
+	}
+
+	var setuju =
+	document.getElementById("setuju").checked ? "Ya" : "Tidak";
+
+	document.getElementById("show").innerText =
+		"Nama : " + nama +
+		"\nEmail : " + email +
+		"\nGender : " + gender +
+		"\nSetuju : " + setuju;
+};
